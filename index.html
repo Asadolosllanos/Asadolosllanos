@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asado Los Llanos | Premium Steakhouse & Parrilla</title>
+
+    <!-- Meta Tags SEO -->
+    <meta name="description"
+        content="Bienvenido a Asado Los Llanos, el auténtico sabor del llano en tu mesa. Disfruta de los mejores cortes de carne premium en nuestras sedes de Acarigua, San Carlos y Valencia. Reserva tu mesa hoy.">
+    <meta name="keywords"
+        content="asado los llanos, parrilla venezuela, carnes premium, restaurante de carnes, acarigua, san carlos, valencia, cortes llaneros, asador gourmet">
+    <meta name="author" content="Asado Los Llanos">
+
+    <!-- Open Graph (Facebook / WhatsApp sharing) -->
+    <meta property="og:title" content="Asado Los Llanos | Premium Steakhouse & Parrilla">
+    <meta property="og:description"
+        content="El verdadero sabor del llano. Visítanos en Acarigua, San Carlos y Valencia o reserva tu mesa en línea de manera directa.">
+    <meta property="og:image" content="IMG/LOGO ORIGINAL ASADOS LOS LLANOS.png">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Leaflet.js para Mapas Interactivos -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Pantalla de Carga Premum (Loader) -->
+    <div id="loader-wrapper">
+        <div class="loader-logo-container">
+            <img src="IMG/ISOTIPO ASADOS LOS LLANOS WHITE SIN FONDO.png" alt="Cargando..." class="loader-logo">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Header y Navegación Pegajosa (Sticky Nav) -->
+    <header id="main-header">
+        <div class="header-container">
+            <a href="#hero" class="brand-logo" id="nav-brand-link">
+                <img src="IMG/ISOTIPO ASADOS LOS LLANOS WHITE SIN FONDO.png" alt="Asado Los Llanos Isotipo"
+                    class="nav-logo-img">
+                <span class="nav-brand-text">ASADO Los Llanos</span>
+            </a>
+
+            <!-- Menú de Navegación -->
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#hero" class="nav-link active" id="link-hero"><i
+                                class="fa-solid fa-fire-flame-curved"></i> Inicio</a></li>
+                    <li><a href="#sedes" class="nav-link" id="link-sedes"><i class="fa-solid fa-map-pin"></i> Sedes</a>
+                    </li>
+                    <li><a href="#menu" class="nav-link" id="link-menu"><i class="fa-solid fa-utensils"></i> Menú</a>
+                    </li>
+                    <li><a href="#reservaciones" class="nav-link btn-nav-reserve" id="link-reservaciones"><i
+                                class="fa-solid fa-calendar-check"></i> Reservar</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botón de Menú Móvil -->
+            <button id="mobile-menu-btn" aria-label="Abrir menú de navegación" id="btn-mobile-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- H1 Accesible para SEO (Oculto visualmente pero legible por buscadores) -->
+        <h1 class="sr-only">Asado Los Llanos - Restaurante de Carnes Premium y Parrilla</h1>
+
+        <!-- Sección Hero (Presentación del Logotipo Principal Animado) -->
+        <section id="hero">
+            <div class="hero-bg-overlay"></div>
+            <!-- Video/Imagen de fondo premium -->
+            <div class="hero-bg-container">
+                <img src="assets/hero-bg.png" alt="Parrilla Gourmet con Brasas Asado Los Llanos" class="hero-bg-img">
+            </div>
+
+            <!-- Contenedor del Logotipo Principal con Animación Profesional -->
+            <div class="hero-content">
+                <div class="hero-logo-wrapper">
+                    <!-- Efecto de resplandor dorado de fondo -->
+                    <div class="logo-glow-aura"></div>
+                    <img src="IMG/LOGO ORIGINAL ASADOS LOS LLANOS SIN FONDO.png"
+                        alt="Asado Los Llanos Logotipo Principal" class="hero-main-logo" id="main-animated-logo">
+                </div>
+            </div>
+
+            <!-- Indicador sutil de scroll hacia abajo -->
+            <a href="#sedes" class="scroll-indicator" id="scroll-to-next" aria-label="Desplazarse hacia abajo">
+                <span>DESCUBRE EL SABOR</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+        </section>
+
+
+
+        <!-- Sección Sedes (Hover de Revelación e Información) -->
+        <section id="sedes" class="section-padding bg-dark-accent">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">DÓNDE ENCONTRARNOS</span>
+                    <h2 class="section-title">NUESTRAS SEDES</h2>
+                    <div class="title-divider"><i class="fa-solid fa-fire"></i></div>
+                </div>
+
+                <!-- Grid de Tarjetas de Sedes -->
+                <div class="sedes-grid">
+
+                    <!-- Sede Acarigua -->
+                    <article class="sede-card" data-lat="9.5606" data-lng="-69.2014" data-name="Sede Acarigua"
+                        id="card-sede-acarigua">
+                        <div class="sede-card-bg" style="background-image: url('assets/sede-acarigua.png');"></div>
+                        <div class="sede-card-overlay"></div>
+                        <div class="sede-card-content">
+                            <div class="sede-badge"><i class="fa-solid fa-star"></i> Principal</div>
+                            <h3 class="sede-title">ACARIGUA</h3>
+
+                            <div class="sede-details">
+                                <p class="sede-info-item"><i class="fa-solid fa-location-dot"></i> Av. Vencedores
+                                    Frente al Club Sirio Venezolano, Acarigua, Portuguesa.</p>
+                                <p class="sede-info-item"><i class="fa-solid fa-clock"></i> Lun - Dom: 7:00 AM - 12:00
+                                    AM</p>
+                                <p class="sede-info-item"><i class="fa-solid fa-phone"></i> +58 4145353384</p>
+                            </div>
+
+                            <!-- Redes Sociales de la Sede -->
+                            <div class="sede-socials">
+                                <a href="https://www.instagram.com/asadolosllanosaa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                    target="_blank" rel="noopener" aria-label="Instagram Sede Acarigua"
+                                    class="sede-social-link"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://wa.me/584145353384" target="_blank" rel="noopener"
+                                    aria-label="WhatsApp Sede Acarigua" class="sede-social-link"><i
+                                        class="fa-brands fa-whatsapp"></i></a>
+                            </div>
+
+                            <button class="btn-sede-map" id="btn-map-acarigua"><i
+                                    class="fa-solid fa-map-location-dot"></i> Ver en Mapa</button>
+                        </div>
+                    </article>
+
+                    <!-- Sede San Carlos -->
+                    <article class="sede-card" data-lat="9.6612" data-lng="-68.5827" data-name="Sede San Carlos"
+                        id="card-sede-sancarlos">
+                        <div class="sede-card-bg" style="background-image: url('assets/sede-sancarlos.png');"></div>
+                        <div class="sede-card-overlay"></div>
+                        <div class="sede-card-content">
+                            <div class="sede-badge"><i class="fa-solid fa-fire"></i> Rústica</div>
+                            <h3 class="sede-title">SAN CARLOS</h3>
+
+                            <div class="sede-details">
+                                <p class="sede-info-item"><i class="fa-solid fa-location-dot"></i> Avenida Bolívar
+                                    Frente a la Bomba La Mata, San Carlos, Cojedes.</p>
+                                <p class="sede-info-item"><i class="fa-solid fa-clock"></i> Lun - Dom: 7:00 AM - 12:00
+                                    AM</p>
+                                <p class="sede-info-item"><i class="fa-solid fa-phone"></i> +58 4121300555</p>
+                            </div>
+
+                            <!-- Redes Sociales de la Sede -->
+                            <div class="sede-socials">
+                                <a href="https://www.instagram.com/asarestlosllanos?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                    target="_blank" rel="noopener" aria-label="Instagram Sede San Carlos"
+                                    class="sede-social-link"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://wa.me/584121300555" target="_blank" rel="noopener"
+                                    aria-label="WhatsApp Sede San Carlos" class="sede-social-link"><i
+                                        class="fa-brands fa-whatsapp"></i></a>
+                            </div>
+
+                            <button class="btn-sede-map" id="btn-map-sancarlos"><i
+                                    class="fa-solid fa-map-location-dot"></i> Ver en Mapa</button>
+                        </div>
+                    </article>
+
+                    <!-- Sede Valencia -->
+                    <article class="sede-card" data-lat="10.2205" data-lng="-67.9734" data-name="Sede Valencia"
+                        id="card-sede-valencia">
+                        <div class="sede-card-bg" style="background-image: url('assets/sede-valencia.png');"></div>
+                        <div class="sede-card-overlay"></div>
+                        <div class="sede-card-content">
+                            <div class="sede-badge"><i class="fa-solid fa-gem"></i> Premium</div>
+                            <h3 class="sede-title">VALENCIA</h3>
+
+                            <div class="sede-details">
+                                <p class="sede-info-item"><i class="fa-solid fa-location-dot"></i>El Viñedo, frente al
+                                    paseo la viña, Valencia, Carabobo.</p>
+                                <p class="sede-info-item"><i class="fa-solid fa-clock"></i> Lun - Dom: 7:00 AM - 12:00
+                                    AM</p>
+                                <p class="sede-info-item"><i class="fa-solid fa-phone"></i> +58 4244177850</p>
+                            </div>
+
+                            <!-- Redes Sociales de la Sede -->
+                            <div class="sede-socials">
+                                <a href="https://www.instagram.com/asadolosllanos?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                    target="_blank" rel="noopener" aria-label="Instagram Sede Valencia"
+                                    class="sede-social-link"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://wa.me/584244177850" target="_blank" rel="noopener"
+                                    aria-label="WhatsApp Sede Valencia" class="sede-social-link"><i
+                                        class="fa-brands fa-whatsapp"></i></a>
+                            </div>
+
+                            <button class="btn-sede-map" id="btn-map-valencia"><i
+                                    class="fa-solid fa-map-location-dot"></i> Ver en Mapa</button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Mapa Interactivo -->
+        <section id="map-section" class="section-padding-small">
+            <div class="container-fluid no-padding">
+                <div class="map-inner-container">
+                    <!-- Mapa real de Leaflet -->
+                    <div id="interactive-map" class="shadow-lg"></div>
+
+                    <!-- Panel flotante del Mapa -->
+                    <div class="map-floating-panel" id="map-info-panel">
+                        <h4>SELECCIONA UNA SEDE</h4>
+                        <p>Haz clic en los marcadores del mapa o presiona "Ver en mapa" en las tarjetas de arriba para
+                            centrar la ubicación.</p>
+                        <div class="map-panel-actions">
+                            <button class="btn-panel-action" id="btn-focus-all"><i
+                                    class="fa-solid fa-earth-americas"></i> Mostrar Todas</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Menú Gastronómico -->
+        <section id="menu" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">NUESTRAS ESPECIALIDADES</span>
+                    <div class="title-divider"><i class="fa-solid fa-fire"></i></div>
+                </div>
+
+                <!-- Destacados del Menú -->
+                <div class="menu-teaser-grid">
+
+                    <!-- Item 1 -->
+                    <div class="menu-item-card" id="menu-item-1">
+                        <div class="menu-item-img-holder">
+                            <img src="assets/hero-bg.png" alt="Punta Trasera Asada Asado Los Llanos"
+                                class="menu-item-img">
+                            <span class="menu-item-price">$28</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <h3>Punta Trasera Llanera</h3>
+                            <p>Corte tierno y jugoso de 500g cocinado lentamente a las brasas de leña, servido con yucas
+                                fritas crujientes, queso telita y guasacaca artesanal.</p>
+                            <span class="menu-item-tag"><i class="fa-solid fa-fire-flame-simple"></i> El Favorito</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="menu-item-card" id="menu-item-2">
+                        <div class="menu-item-img-holder">
+                            <img src="assets/sede-acarigua.png" alt="T-Bone Premium Asado Los Llanos"
+                                class="menu-item-img">
+                            <span class="menu-item-price">$34</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <h3>T-Bone Steak Premium</h3>
+                            <p>Imponente corte importado de 600g que combina el sabor del New York strip y la terneza
+                                del lomito, sellado a fuego alto con sal marina gruesa y mantequilla de ajo.</p>
+                            <span class="menu-item-tag"><i class="fa-solid fa-gem"></i> Premium</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="menu-item-card" id="menu-item-3">
+                        <div class="menu-item-img-holder">
+                            <img src="assets/sede-sancarlos.png" alt="Costillar de Cerdo Ahumado Asado Los Llanos"
+                                class="menu-item-img">
+                            <span class="menu-item-price">$22</span>
+                        </div>
+                        <div class="menu-item-body">
+                            <h3>Costillar de Cerdo Ahumado</h3>
+                            <p>Costillas de cerdo premium ahumadas durante 6 horas a fuego lento en madera de manzano,
+                                bañadas con nuestra reducción secreta de melado de papelón y ron venezolano.</p>
+                            <span class="menu-item-tag"><i class="fa-solid fa-drumstick-bite"></i> Ahumado</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Botón de Descarga / Visualización de PDF -->
+                <div class="text-center menu-pdf-action-block">
+                    <a href="assets/menu-placeholder.pdf" class="btn-premium-action" target="_blank"
+                        download="Menu_Asado_Los_Llanos.pdf" id="btn-download-menu">
+                        <span class="btn-content">
+                            <i class="fa-solid fa-file-pdf"></i> VER MENÚ COMPLETO (PDF)
+                        </span>
+                        <span class="btn-glow"></span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sección Reservaciones (Formulario WhatsApp) -->
+        <section id="reservaciones" class="section-padding bg-dark-accent">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle">PLANIFICA TU VISITA</span>
+                    <h2 class="section-title">RESERVACIÓN DE MESA</h2>
+                    <div class="title-divider"><i class="fa-solid fa-fire"></i></div>
+                    <p class="section-description">
+                        Completa tus datos en nuestro formulario de alta gama y genera tu solicitud de reserva
+                        instantánea para enviarla a la sede de tu elección por WhatsApp.
+                    </p>
+                </div>
+
+                <!-- Contenedor del Formulario Glassmorphism -->
+                <div class="reservation-card-wrapper">
+                    <div class="reservation-glow-effect"></div>
+                    <form id="whatsapp-reservation-form" class="reservation-form">
+
+                        <div class="form-row-two">
+                            <!-- Nombre y Apellidos -->
+                            <div class="form-group floating-label-group" id="group-nombre">
+                                <i class="fa-solid fa-user form-field-icon"></i>
+                                <input type="text" id="reserve-name" required placeholder=" " autocomplete="name">
+                                <label for="reserve-name">Nombre y Apellidos</label>
+                            </div>
+
+                            <!-- Cantidad de Comensales -->
+                            <div class="form-group floating-label-group" id="group-comensales">
+                                <i class="fa-solid fa-users form-field-icon"></i>
+                                <input type="number" id="reserve-guests" min="1" max="50" required placeholder=" "
+                                    value="2">
+                                <label for="reserve-guests">Cantidad de Comensales</label>
+                            </div>
+                        </div>
+
+                        <div class="form-row-three">
+                            <!-- Sede a Reservar -->
+                            <div class="form-group select-group" id="group-sede">
+                                <label for="reserve-sede" class="select-label"><i class="fa-solid fa-shop"></i>
+                                    Sede</label>
+                                <select id="reserve-sede" required>
+                                    <option value="Acarigua" data-phone="584125551234">Sede Acarigua</option>
+                                    <option value="San Carlos" data-phone="584125555678">Sede San Carlos</option>
+                                    <option value="Valencia" data-phone="584125559012">Sede Valencia</option>
+                                </select>
+                            </div>
+
+                            <!-- Fecha -->
+                            <div class="form-group date-group" id="group-fecha">
+                                <label for="reserve-date" class="field-label"><i class="fa-solid fa-calendar"></i>
+                                    Fecha</label>
+                                <input type="date" id="reserve-date" required>
+                            </div>
+
+                            <!-- Hora -->
+                            <div class="form-group time-group" id="group-hora">
+                                <label for="reserve-time" class="field-label"><i class="fa-solid fa-clock"></i>
+                                    Hora</label>
+                                <input type="time" id="reserve-time" required>
+                            </div>
+                        </div>
+
+                        <!-- Área de Preferencia -->
+                        <div class="form-group area-radio-group" id="group-area">
+                            <span class="area-group-title"><i class="fa-solid fa-chair"></i> Área de Preferencia</span>
+                            <div class="radio-tiles-container" id="area-options">
+                        <!-- Area options will be injected here based on selected sede -->
+                    </div>
+                        </div>
+
+                        <!-- Botón de Confirmación y Llamado a la Acción -->
+                        <div class="form-action-block">
+                            <button type="submit" class="btn-reservation-submit" id="btn-submit-reserve">
+                                <i class="fa-brands fa-whatsapp"></i> ENVIAR SOLICITUD DE RESERVA
+                            </button>
+                            <p class="form-disclaimer"><i class="fa-solid fa-circle-info"></i> Al hacer clic, se abrirá
+                                la aplicación de WhatsApp de la sede correspondiente con tu mensaje estructurado listo
+                                para ser enviado.</p>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Institucional -->
+    <footer id="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+
+                    <!-- Columna Navegación -->
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">NAVEGACIÓN</h4>
+                        <ul class="footer-links">
+                            <li><a href="#hero"><i class="fa-solid fa-chevron-right"></i> Inicio</a></li>
+                            <li><a href="#sedes"><i class="fa-solid fa-chevron-right"></i> Sedes</a></li>
+                            <li><a href="#menu"><i class="fa-solid fa-chevron-right"></i> Menú</a></li>
+                            <li><a href="#reservaciones"><i class="fa-solid fa-chevron-right"></i> Reservar Mesa</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna Sedes Contacto -->
+                    <div class="footer-col sedes-col">
+                        <h4 class="footer-col-title">CONTACTO POR SEDES</h4>
+                        <ul class="footer-contact-list">
+                            <li>
+                                <strong>Acarigua:</strong>
+                                <span><i class="fa-solid fa-phone"></i> +58 412-5551234</span>
+                            </li>
+                            <li>
+                                <strong>San Carlos:</strong>
+                                <span><i class="fa-solid fa-phone"></i> +58 412-5555678</span>
+                            </li>
+                            <li>
+                                <strong>Valencia:</strong>
+                                <span><i class="fa-solid fa-phone"></i> +58 412-5559012</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p>&copy; 2026 Asado Los Llanos. Todos los derechos reservados. | Diseñado con la fuerza del llano.</p>
+                <div class="footer-general-socials">
+                    <a href="https://instagram.com/asadoslosllanos" target="_blank" rel="noopener"
+                        aria-label="Instagram General"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/asadoslosllanos" target="_blank" rel="noopener"
+                        aria-label="Facebook General"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://tiktok.com/@asadoslosllanos" target="_blank" rel="noopener"
+                        aria-label="TikTok General"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet.js script -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Lógica JS Personalizada -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
