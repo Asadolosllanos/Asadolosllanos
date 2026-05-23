@@ -2,9 +2,6 @@
    SISTEMA DE DISEÑO - ASADO LOS LLANOS PREMIUM
    ========================================================================== */
 
-/* Importación de Tipografía de Marca (Fashion Fetish Live CDN) */
-@import url('https://fonts.cdnfonts.com/css/fashion-fetish');
-
 /* Cargadores Locales para Tipografías de Marca */
 @font-face {
     font-family: 'Florensa';
@@ -16,9 +13,7 @@
 
 @font-face {
     font-family: 'Fashion Fetish';
-    src: url('../fonts/FashionFetish.woff2') format('woff2'),
-         url('../fonts/FashionFetish.otf') format('opentype'),
-         url('../fonts/FashionFetish.ttf') format('truetype');
+    src: url('../fonts/Fashion Fetish Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -26,9 +21,7 @@
 
 @font-face {
     font-family: 'Fashion Fetish Light';
-    src: url('../fonts/FashionFetish-Light.woff2') format('woff2'),
-         url('../fonts/FashionFetish-Light.otf') format('opentype'),
-         url('../fonts/FashionFetish-Light.ttf') format('truetype');
+    src: url('../fonts/Fashion Fetish Regular.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -36,19 +29,28 @@
 
 /* Variables y Tokens de Diseño (Paleta de Colores y Tipografía Oficiales) */
 :root {
-    --bg-primary: #0f0f10; /* Negro profundo de la paleta */
-    --bg-secondary: #161619; /* Gris oscuro neutro de la paleta */
-    --bg-tertiary: #222227; /* Gris intermedio */
-    --accent-gold: #f2b705; /* Amarillo de la paleta exacto */
-    --accent-gold-hover: #ffcc00; /* Amarillo brillante para hovers */
+    --bg-primary: #0f0f10;
+    /* Negro profundo de la paleta */
+    --bg-secondary: #161619;
+    /* Gris oscuro neutro de la paleta */
+    --bg-tertiary: #222227;
+    /* Gris intermedio */
+    --accent-gold: #f2b705;
+    /* Amarillo de la paleta exacto */
+    --accent-gold-hover: #ffcc00;
+    /* Amarillo brillante para hovers */
     --accent-gold-rgb: 242, 183, 5;
-    --accent-gray: #5e5e62; /* Gris medio de la paleta */
+    --accent-gray: #5e5e62;
+    /* Gris medio de la paleta */
     --accent-red: #e74c3c;
-    --text-primary: #ffffff; /* Blanco de la paleta */
+    --text-primary: #ffffff;
+    /* Blanco de la paleta */
     --text-secondary: #e0e0e0;
     --text-muted: #8e8e93;
-    --font-heading: 'Florensa', 'Playfair Display', serif; /* Tipografía oficial Florensa */
-    --font-brand-sans: 'Fashion Fetish', 'Montserrat', sans-serif; /* Tipografía oficial Fashion Fetish */
+    --font-heading: 'Florensa', 'Playfair Display', serif;
+    /* Tipografía oficial Florensa */
+    --font-brand-sans: 'Fashion Fetish', 'Montserrat', sans-serif;
+    /* Tipografía oficial Fashion Fetish */
     --font-body: 'Montserrat', sans-serif;
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-fast: all 0.25s ease;
@@ -84,13 +86,16 @@ body {
 ::-webkit-scrollbar {
     width: 8px;
 }
+
 ::-webkit-scrollbar-track {
     background: var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb {
     background: var(--accent-gold);
     border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-gold-hover);
 }
@@ -245,10 +250,13 @@ body {
 }
 
 @keyframes loader-pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(0.95);
         filter: drop-shadow(0 0 5px rgba(var(--accent-gold-rgb), 0.15));
     }
+
     50% {
         transform: scale(1.05);
         filter: drop-shadow(0 0 20px rgba(var(--accent-gold-rgb), 0.4));
@@ -256,8 +264,13 @@ body {
 }
 
 @keyframes loader-slide {
-    from { left: -50px; }
-    to { left: 150px; }
+    from {
+        left: -50px;
+    }
+
+    to {
+        left: 150px;
+    }
 }
 
 
@@ -310,7 +323,8 @@ body {
 .nav-logo-img {
     height: 40px;
     width: auto;
-    margin-right: 4px; /* reduced spacing to bring text closer to logo */
+    margin-right: 4px;
+    /* reduced spacing to bring text closer to logo */
     transition: var(--transition-smooth);
 }
 
@@ -319,12 +333,14 @@ body {
 }
 
 .nav-brand-text {
-    font-family: var(--font-brand-sans); /* includes Fashion Fetish */
+    font-family: var(--font-brand-sans);
+    /* includes Fashion Fetish */
     font-weight: 700;
     background: linear-gradient(to right, var(--text-primary), var(--accent-gold));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    letter-spacing: -0.04rem; /* tighter spacing to resemble logo */
+    letter-spacing: -0.04rem;
+    /* tighter spacing to resemble logo */
 }
 
 /* Menú de Navegación */
@@ -466,8 +482,13 @@ body {
 }
 
 @keyframes hero-pan {
-    0% { transform: scale(1.02) translate(0, 0); }
-    100% { transform: scale(1.08) translate(-1%, -1%); }
+    0% {
+        transform: scale(1.02) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1.08) translate(-1%, -1%);
+    }
 }
 
 .hero-content {
@@ -503,8 +524,15 @@ body {
 }
 
 @keyframes gold-pulse {
-    0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.6; }
-    100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+    0% {
+        transform: translate(-50%, -50%) scale(0.95);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.15);
+        opacity: 1;
+    }
 }
 
 /* Animación de Entrada del Logo */
@@ -524,6 +552,7 @@ body {
         transform: scale(0.85);
         filter: drop-shadow(0 0 0 rgba(var(--accent-gold-rgb), 0)) brightness(0.6);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -564,12 +593,21 @@ body {
 }
 
 @keyframes scroll-bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(6px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
 }
 
 @keyframes scroll-fade-in {
-    to { opacity: 0.8; }
+    to {
+        opacity: 0.8;
+    }
 }
 
 
@@ -1149,8 +1187,8 @@ body {
     transition: var(--transition-fast);
 }
 
-#group-nombre input:focus ~ label,
-#group-nombre input:not(:placeholder-shown) ~ label {
+#group-nombre input:focus~label,
+#group-nombre input:not(:placeholder-shown)~label {
     top: 0;
     left: 1rem;
     transform: translateY(-50%) scale(0.85);
@@ -1169,7 +1207,7 @@ body {
     font-size: 0.9rem;
 }
 
-#group-nombre input:focus ~ .form-field-icon {
+#group-nombre input:focus~.form-field-icon {
     color: var(--accent-gold);
 }
 
@@ -1362,18 +1400,18 @@ body {
 }
 
 /* Estado de Radio Seleccionado */
-.radio-tile-label input:checked + .radio-tile {
+.radio-tile-label input:checked+.radio-tile {
     background: rgba(var(--accent-gold-rgb), 0.05);
     border-color: var(--accent-gold);
     box-shadow: 0 0 20px rgba(var(--accent-gold-rgb), 0.15);
 }
 
-.radio-tile-label input:checked + .radio-tile i {
+.radio-tile-label input:checked+.radio-tile i {
     color: var(--accent-gold);
     transform: scale(1.1);
 }
 
-.radio-tile-label input:checked + .radio-tile span {
+.radio-tile-label input:checked+.radio-tile span {
     color: var(--text-primary);
     font-weight: 600;
 }
@@ -1595,7 +1633,6 @@ span.flatpickr-weekday {
 }
 
 
-   ========================================================================== */
 #main-footer {
     background-color: #050507;
     border-top: 1px solid var(--glass-border);
@@ -1786,26 +1823,26 @@ span.flatpickr-weekday {
     .section-padding {
         padding: 5rem 0;
     }
-    
+
     .section-title {
         font-size: 2.4rem;
     }
-    
+
     .sedes-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
-    
+
     .menu-teaser-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
-    
+
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 3rem;
     }
-    
+
     .brand-col {
         grid-column: span 2;
         max-width: 100%;
@@ -1814,22 +1851,25 @@ span.flatpickr-weekday {
 }
 
 @media (max-width: 768px) {
+
     /* Menú Móvil Hamburger */
     #mobile-menu-btn {
         display: block;
         z-index: 1001;
     }
-    
+
     #mobile-menu-btn.active .bar:nth-child(2) {
         opacity: 0;
     }
+
     #mobile-menu-btn.active .bar:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
+
     #mobile-menu-btn.active .bar:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
     }
-    
+
     #navbar {
         position: fixed;
         top: 0;
@@ -1847,11 +1887,11 @@ span.flatpickr-weekday {
         justify-content: center;
         transition: var(--transition-smooth);
     }
-    
+
     #navbar.active {
         right: 0;
     }
-    
+
     #navbar ul {
         flex-direction: column;
         gap: 2.5rem;
@@ -1859,16 +1899,16 @@ span.flatpickr-weekday {
         padding: 2rem;
         text-align: center;
     }
-    
+
     .nav-link {
         font-size: 1.1rem;
     }
-    
+
     .btn-nav-reserve {
         width: 80%;
         margin: 0 auto;
     }
-    
+
     /* Layouts a una columna */
     .sedes-grid,
     .menu-teaser-grid,
@@ -1876,45 +1916,45 @@ span.flatpickr-weekday {
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
-    
+
     .logo-variant-slide {
         text-align: center;
         min-height: auto;
     }
-    
+
     .variant-img-holder {
         height: 220px;
         padding: 1.5rem;
     }
-    
+
     .variant-info {
         text-align: center;
     }
-    
+
     .logo-showcase-container {
         padding: 2rem;
     }
-    
+
     .form-row-two,
     .form-row-three {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .radio-tiles-container {
         grid-template-columns: 1fr;
         gap: 0.8rem;
     }
-    
+
     .reservation-form {
         padding: 2rem;
     }
-    
+
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
-    
+
     .brand-col {
         grid-column: span 1;
     }
@@ -1944,7 +1984,7 @@ span.flatpickr-weekday {
         background: var(--bg-secondary);
         color: var(--text-primary);
     }
-    
+
     .map-floating-panel {
         position: relative;
         top: 0;
@@ -1954,18 +1994,73 @@ span.flatpickr-weekday {
         border-top: none;
         box-shadow: none;
     }
-    
+
     .map-inner-container {
         height: 700px;
         display: flex;
         flex-direction: column;
     }
-    
+
     #interactive-map {
         height: 400px;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
+}
+
+/* ==========================================================================
+   CHOICES.JS - TEMA OSCURO DORADO (SELECT PREMIUM)
+   ========================================================================== */
+.choices {
+    margin-bottom: 0;
+}
+.choices__inner {
+    background: var(--bg-tertiary) !important;
+    border: 1px solid rgba(var(--accent-gold-rgb), 0.35) !important;
+    border-radius: 6px !important;
+    padding: 0.65rem 1.1rem !important;
+    min-height: 54px !important;
+    display: flex;
+    align-items: center;
+    transition: var(--transition-fast);
+}
+.is-focused .choices__inner, .is-open .choices__inner {
+    border-color: var(--accent-gold) !important;
+    box-shadow: 0 0 15px rgba(var(--accent-gold-rgb), 0.2) !important;
+}
+.choices__list--single {
+    padding: 0 !important;
+}
+.choices__item--selectable {
+    color: var(--accent-gold) !important;
+    font-family: var(--font-body) !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+}
+.choices[data-type*="select-one"]::after {
+    border-color: var(--accent-gold) transparent transparent transparent !important;
+    margin-top: -2.5px !important;
+}
+.choices[data-type*="select-one"].is-open::after {
+    border-color: transparent transparent var(--accent-gold) transparent !important;
+    margin-top: -7.5px !important;
+}
+.choices__list--dropdown {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--accent-gold) !important;
+    border-radius: 0 0 6px 6px !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7) !important;
+    margin-top: -1px !important;
+}
+.choices__list--dropdown .choices__item {
+    font-family: var(--font-body) !important;
+    color: var(--text-secondary) !important;
+    font-size: 0.95rem !important;
+    transition: var(--transition-fast) !important;
+}
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+    background-color: rgba(var(--accent-gold-rgb), 0.15) !important;
+    color: var(--accent-gold) !important;
 }

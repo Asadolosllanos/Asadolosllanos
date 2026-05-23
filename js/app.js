@@ -267,23 +267,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Configurar fechas mínimas del input date (Día de hoy)
     const reserveDateInput = document.getElementById('reserve-date');
     if (reserveDateInput) {
-        const today = new Date();
-        const yyyy = today.getFullYear();
-        let mm = today.getMonth() + 1; // Enero es 0
-        let dd = today.getDate();
-
-        if (mm < 10) mm = '0' + mm;
-        if (dd < 10) dd = '0' + dd;
-
-        reserveDateInput.min = `${yyyy}-${mm}-${dd}`;
-        reserveDateInput.value = `${yyyy}-${mm}-${dd}`;
+        const today = new Date().toISOString().split('T')[0];
+        reserveDateInput.setAttribute('min', today);
     }
-
-    // Configurar hora por defecto (Hora del almuerzo / cena próxima)
-    const reserveTimeInput = document.getElementById('reserve-time');
-if (reserveTimeInput) {
-    reserveTimeInput.value = "19:00"; // 7:00 PM por defecto
-}
 
 // Dynamic Area Options based on selected sede
 const areaOptionsContainer = document.getElementById('area-options');
@@ -294,7 +280,7 @@ function updateAreaOptions(selectedSede) {
         'Salón': 'fa-couch',
         'Sushi': 'fa-fish',
         'Pollo': 'fa-drumstick-bite',
-        'Tarima': 'fa-stage',
+        'Tarima': 'fa-microphone-lines',
         'Terraza': 'fa-umbrella-beach',
         'VIP 1': 'fa-star',
         'VIP 2': 'fa-star',
@@ -349,9 +335,10 @@ function updateAreaOptions(selectedSede) {
 
 
 
-// Initialize with default selected sede
+// Manejo del Select Nativo
 if (sedeSelect) {
     updateAreaOptions(sedeSelect.value);
+    
     sedeSelect.addEventListener('change', (e) => {
         updateAreaOptions(e.target.value);
     });
