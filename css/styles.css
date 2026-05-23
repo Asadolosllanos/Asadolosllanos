@@ -1095,6 +1095,7 @@ body {
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
     margin-bottom: 2.2rem;
+    align-items: end;
 }
 
 .form-row-three {
@@ -1110,12 +1111,13 @@ body {
     flex-direction: column;
 }
 
-/* Inputs de etiqueta flotante */
+/* ---- Campo Nombre: etiqueta flotante ---- */
 .floating-label-group {
     position: relative;
 }
 
-.floating-label-group input {
+/* Solo el campo Nombre usa floating label */
+#group-nombre input {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 6px;
@@ -1125,16 +1127,17 @@ body {
     font-size: 0.95rem;
     font-weight: 300;
     transition: var(--transition-fast);
+    width: 100%;
 }
 
-.floating-label-group input:focus {
+#group-nombre input:focus {
     outline: none;
     border-color: var(--accent-gold);
     background: rgba(var(--accent-gold-rgb), 0.02);
     box-shadow: 0 0 15px rgba(var(--accent-gold-rgb), 0.15);
 }
 
-.floating-label-group label {
+#group-nombre label {
     font-family: var(--font-brand-sans);
     position: absolute;
     left: 2.8rem;
@@ -1146,8 +1149,8 @@ body {
     transition: var(--transition-fast);
 }
 
-.floating-label-group input:focus ~ label,
-.floating-label-group input:not(:placeholder-shown) ~ label {
+#group-nombre input:focus ~ label,
+#group-nombre input:not(:placeholder-shown) ~ label {
     top: 0;
     left: 1rem;
     transform: translateY(-50%) scale(0.85);
@@ -1166,8 +1169,52 @@ body {
     font-size: 0.9rem;
 }
 
-.floating-label-group input:focus ~ .form-field-icon {
+#group-nombre input:focus ~ .form-field-icon {
     color: var(--accent-gold);
+}
+
+/* ---- Campo Cantidad de Comensales: mismo estilo que Sede ---- */
+#group-comensales {
+    display: flex;
+    flex-direction: column;
+}
+
+#group-comensales label {
+    font-family: var(--font-brand-sans);
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: static;
+    transform: none;
+    pointer-events: auto;
+}
+
+#group-comensales input {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    padding: 1rem 1.1rem 1rem 2.8rem;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 300;
+    transition: var(--transition-fast);
+    width: 100%;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+}
+
+#group-comensales input:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    background: rgba(var(--accent-gold-rgb), 0.02);
+    box-shadow: 0 0 15px rgba(var(--accent-gold-rgb), 0.15);
 }
 
 /* Selectores y Fechas */
@@ -1194,16 +1241,42 @@ body {
 .select-group select,
 .date-group input,
 .time-group input {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--bg-tertiary);
+    border: 1px solid rgba(var(--accent-gold-rgb), 0.35);
     border-radius: 6px;
     padding: 1rem 1.1rem;
-    color: var(--text-primary);
+    color: var(--accent-gold);
     font-family: var(--font-body);
     font-size: 0.95rem;
-    font-weight: 300;
+    font-weight: 500;
     transition: var(--transition-fast);
     width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Flecha personalizada para el select */
+.select-group {
+    position: relative;
+}
+
+.select-group::after {
+    content: '\f107';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    color: var(--accent-gold);
+    pointer-events: none;
+    font-size: 0.9rem;
+}
+
+/* Opciones del dropdown con fondo oscuro y texto negro */
+.select-group select option {
+    background-color: #1a1a1f;
+    color: #000000;
+    font-weight: 500;
 }
 
 .select-group select:focus,
@@ -1211,7 +1284,21 @@ body {
 .time-group input:focus {
     outline: none;
     border-color: var(--accent-gold);
-    background: rgba(var(--accent-gold-rgb), 0.02);
+    background: var(--bg-tertiary);
+    box-shadow: 0 0 15px rgba(var(--accent-gold-rgb), 0.2);
+}
+
+/* Estilos del calendario y reloj nativos (webkit) */
+.date-group input::-webkit-calendar-picker-indicator,
+.time-group input::-webkit-calendar-picker-indicator {
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(10deg);
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.date-group input::-webkit-calendar-picker-indicator:hover,
+.time-group input::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
 }
 
 /* Área de Preferencia (Mosaico de Botones) */
@@ -1342,7 +1429,172 @@ body {
 
 
 /* ==========================================================================
-   FOOTER INSTITUCIONAL
+   FLATPICKR - TEMA OSCURO DORADO (DATE & TIME PICKER PREMIUM)
+   ========================================================================== */
+.flatpickr-calendar {
+    background: var(--bg-secondary) !important;
+    border: 1px solid rgba(var(--accent-gold-rgb), 0.35) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7) !important;
+    font-family: var(--font-body) !important;
+    color: var(--text-primary) !important;
+}
+
+.flatpickr-months {
+    background: var(--bg-tertiary) !important;
+    border-radius: 10px 10px 0 0 !important;
+    padding: 0.4rem 0 !important;
+}
+
+.flatpickr-month {
+    color: var(--accent-gold) !important;
+    fill: var(--accent-gold) !important;
+    height: 40px !important;
+}
+
+.flatpickr-current-month {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: var(--accent-gold) !important;
+    padding-top: 6px !important;
+}
+
+.flatpickr-current-month .numInputWrapper span.arrowUp:after {
+    border-bottom-color: var(--accent-gold) !important;
+}
+
+.flatpickr-current-month .numInputWrapper span.arrowDown:after {
+    border-top-color: var(--accent-gold) !important;
+}
+
+.flatpickr-current-month select {
+    color: var(--accent-gold) !important;
+    background: transparent !important;
+    border: none !important;
+    font-weight: 600 !important;
+}
+
+.flatpickr-prev-month,
+.flatpickr-next-month {
+    fill: var(--accent-gold) !important;
+    color: var(--accent-gold) !important;
+}
+
+.flatpickr-prev-month:hover svg,
+.flatpickr-next-month:hover svg {
+    fill: var(--accent-gold-hover) !important;
+}
+
+.flatpickr-weekdays {
+    background: var(--bg-tertiary) !important;
+}
+
+span.flatpickr-weekday {
+    background: var(--bg-tertiary) !important;
+    color: var(--accent-gold) !important;
+    font-weight: 600 !important;
+    font-size: 0.78rem !important;
+}
+
+.flatpickr-days {
+    border-color: rgba(var(--accent-gold-rgb), 0.15) !important;
+}
+
+.dayContainer {
+    border-color: transparent !important;
+}
+
+.flatpickr-day {
+    color: var(--text-secondary) !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+}
+
+.flatpickr-day:hover {
+    background: rgba(var(--accent-gold-rgb), 0.12) !important;
+    border-color: rgba(var(--accent-gold-rgb), 0.35) !important;
+    color: var(--accent-gold) !important;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover {
+    background: var(--accent-gold) !important;
+    border-color: var(--accent-gold) !important;
+    color: var(--bg-primary) !important;
+    font-weight: 700 !important;
+    box-shadow: 0 0 12px rgba(var(--accent-gold-rgb), 0.4) !important;
+}
+
+.flatpickr-day.today {
+    border-color: rgba(var(--accent-gold-rgb), 0.5) !important;
+    color: var(--accent-gold) !important;
+}
+
+.flatpickr-day.today:hover {
+    background: rgba(var(--accent-gold-rgb), 0.15) !important;
+}
+
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay {
+    color: var(--text-muted) !important;
+    opacity: 0.4 !important;
+}
+
+.flatpickr-day.flatpickr-disabled {
+    color: var(--text-muted) !important;
+    opacity: 0.25 !important;
+}
+
+/* Time picker oscuro */
+.flatpickr-time {
+    background: var(--bg-tertiary) !important;
+    border-top: 1px solid rgba(var(--accent-gold-rgb), 0.15) !important;
+    border-radius: 0 0 10px 10px !important;
+}
+
+.flatpickr-time input {
+    background: transparent !important;
+    color: var(--accent-gold) !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+    border: none !important;
+}
+
+.flatpickr-time input:hover,
+.flatpickr-time input:focus {
+    background: rgba(var(--accent-gold-rgb), 0.08) !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.flatpickr-time .flatpickr-time-separator,
+.flatpickr-time .flatpickr-am-pm {
+    color: var(--accent-gold) !important;
+    font-weight: 600 !important;
+}
+
+.flatpickr-time .numInputWrapper span.arrowUp:after {
+    border-bottom-color: var(--accent-gold) !important;
+}
+
+.flatpickr-time .numInputWrapper span.arrowDown:after {
+    border-top-color: var(--accent-gold) !important;
+}
+
+/* Input de fecha/hora con Flatpickr activo */
+.date-group input.flatpickr-input,
+.time-group input.flatpickr-input {
+    cursor: pointer;
+}
+
+.date-group input.flatpickr-input:read-only,
+.time-group input.flatpickr-input:read-only {
+    background: var(--bg-tertiary);
+    color: var(--accent-gold);
+    border: 1px solid rgba(var(--accent-gold-rgb), 0.35);
+}
+
+
    ========================================================================== */
 #main-footer {
     background-color: #050507;
