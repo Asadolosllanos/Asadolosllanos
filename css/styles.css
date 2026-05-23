@@ -1289,6 +1289,10 @@ body {
     font-weight: 500;
     transition: var(--transition-fast);
     width: 100%;
+}
+
+/* Solo quitamos la apariencia nativa al select para poner nuestra flecha, los inputs de fecha/hora la necesitan en móviles */
+.select-group select {
     -webkit-appearance: none;
     appearance: none;
 }
